@@ -1,0 +1,41 @@
+
+header {
+    background: linear-gradient(to right, black, #0b3d91); /* Preto para azul escuro */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    
+}
+
+/* Estilo da imagem */
+.img-logo {
+    max-width: 50%; /* Reduz o tamanho para 50% */
+    height: auto;
+    margin-left: 0; /* Mantém a imagem alinhada à margem esquerda */
+}
+
+/* Estilo da navegação */
+.nav {
+    margin-right: 0; /* Mantém a navegação alinhada à margem direita */
+}
+
+.ul-left-side {
+    list-style: none; /* Remove os marcadores de lista */
+    display: flex; /* Organiza os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre os links */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo dos links */
+.link {
+    text-decoration: none; /* Remove sublinhado */
+    color: white; /* Cor branca para melhor contraste */
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #1e90ff; /* Azul mais claro no hover */
+}

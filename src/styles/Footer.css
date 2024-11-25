@@ -1,0 +1,20 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, black, #0b3d91);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    z-index: 10; /* Para garantir que ele fique acima de outros elementos */
+}
+
+footer p {
+    color: red;
+}
+
+footer a {
+    color: blue;
+}
