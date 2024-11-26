@@ -10,6 +10,16 @@ export default function Create(){
             <Image className='img-logo' src={logoapi} alt='Logo da API'/>
 
             <section className="user-input">
+                <input
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    placeholder="Nome de usuário"
+                    aria-label="Nome de usuário "
+                />
+            </section>
+
+            <section className="user-input">
                 <input type="email" name="email" id="email" placeholder="Email" aria-label="email" />
             </section>
 

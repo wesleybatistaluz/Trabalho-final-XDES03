@@ -1,83 +1,75 @@
-"use client";
+import Link from "next/link";
 
-import { useState } from "react";
-import Image from "next/image";
-import logoapi from "public/logoapi.svg";
+//Para ler arquivos com nextjs
+import {promises as fs} from 'fs';
+import path from "path";
+import { redirect } from "next/navigation";
 
-export default function Create() {
-    const [formData, setFormData] = useState({ email: "", senha: "", confSenha: "" });
-    const [message, setMessage] = useState("");
+import crypto from 'crypto';
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+const dbPath = 
+    path.join(process.cwd(),'src','db','users-db.json');
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+// Marcar o componente como async para "server component"
+export default async function CreateUser() {
+    // Ler o arquivo JSON e parsear os dados
+    const file = await fs.readFile(`${dbPath}`,'utf8');
+    const data = JSON.parse(file);
 
-        try {
-            const response = await fetch("/api/users", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                setMessage(data.error || "Erro ao cadastrar.");
-                return;
+    // Server Action para adicionar um novo usuário
+    const addUser = async (formData: FormData) => {
+        "use server";
+        data.push(
+            {
+                id: crypto.randomUUID(),
+                nome : formData.get("nome"),
+                email : formData.get("email"),
+                senha : formData.get("senha")
             }
+        )
+        await fs.writeFile(dbPath, JSON.stringify(data, null,2));
+        redirect('/main/listar');
 
-            setMessage("Usuário cadastrado com sucesso!");
-        } catch (error) {
-            console.error(error);
-            setMessage("Erro ao conectar ao servidor.");
-        }
+   
+       
     };
 
     return (
-        <form onSubmit={handleSubmit} className="user-create">
-            <Image className="img-logo" src={logoapi} alt="Logo da API" />
-            <section className="user-input">
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                    aria-label="Email"
-                    onChange={handleChange}
-                />
-            </section>
+        <div className="create-user-container">
+            <h2>Cadastrar Novo Usuário</h2>
+            <form action={addUser} method="POST" className="create-user-form">
+                <section className="user-input">
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Nome do Usuário"
+                        aria-label="Nome do Usuário"
+                    />
+                </section>
 
-            <section className="user-input">
-                <input
-                    type="password"
-                    name="senha"
-                    id="senha"
-                    placeholder="Senha"
-                    aria-label="Senha"
-                    onChange={handleChange}
-                />
-            </section>
+                <section className="user-input">
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email do Usuário"
+                        aria-label="Email do Usuário"
+                    />
+                </section>
 
-            <section className="user-input">
-                <input
-                    type="password"
-                    name="conf-senha"
-                    id="conf-senha"
-                    placeholder="Confirme sua senha"
-                    aria-label="Confirme sua senha"
-                    onChange={handleChange}
-                />
-            </section>
+                <section className="user-input">
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Senha"
+                        aria-label="Senha"
+                    />
+                </section>
 
-            <button type="submit" className="btn-Cadastrar">
-                Cadastrar
-            </button>
-            {message && <p>{message}</p>}
-        </form>
+                <button type="submit">Cadastrar Usuário</button>
+            </form>
+        </div>
     );
 }
