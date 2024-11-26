@@ -1,48 +1,36 @@
-import Link from "next/link";
+export default function CreateUser() {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-//Para ler arquivos com nextjs
-import {promises as fs} from 'fs';
-import path from "path";
-import { redirect } from "next/navigation";
+        const formData = new FormData(e.currentTarget);
+        const response = await fetch("/api/add-user", {
+            method: "POST",
+            body: JSON.stringify({
+                nome: formData.get("nome"),
+                email: formData.get("email"),
+                senha: formData.get("senha"),
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
 
-import crypto from 'crypto';
-
-const dbPath = 
-    path.join(process.cwd(),'src','db','users-db.json');
-
-// Marcar o componente como async para "server component"
-export default async function CreateUser() {
-    // Ler o arquivo JSON e parsear os dados
-    const file = await fs.readFile(`${dbPath}`,'utf8');
-    const data = JSON.parse(file);
-
-    // Server Action para adicionar um novo usuário
-    const addUser = async (formData: FormData) => {
-        "use server";
-        data.push(
-            {
-                id: crypto.randomUUID(),
-                nome : formData.get("nome"),
-                email : formData.get("email"),
-                senha : formData.get("senha")
-            }
-        )
-        await fs.writeFile(dbPath, JSON.stringify(data, null,2));
-        redirect('/main/listar');
-
-   
-       
+        if (response.ok) {
+            window.location.href = "/main/listar"; // Redireciona após sucesso
+        } else {
+            alert("Erro ao cadastrar usuário.");
+        }
     };
 
     return (
         <div className="create-user-container">
             <h2>Cadastrar Novo Usuário</h2>
-            <form action={addUser} method="POST" className="create-user-form">
+            <form onSubmit={handleSubmit} className="create-user-form">
                 <section className="user-input">
                     <input
                         type="text"
-                        id="nome"
                         name="nome"
+                        id="nome"
                         placeholder="Nome do Usuário"
                         aria-label="Nome do Usuário"
                     />
@@ -51,8 +39,8 @@ export default async function CreateUser() {
                 <section className="user-input">
                     <input
                         type="email"
-                        id="email"
                         name="email"
+                        id="email"
                         placeholder="Email do Usuário"
                         aria-label="Email do Usuário"
                     />
@@ -61,8 +49,8 @@ export default async function CreateUser() {
                 <section className="user-input">
                     <input
                         type="password"
-                        id="senha"
                         name="senha"
+                        id="senha"
                         placeholder="Senha"
                         aria-label="Senha"
                     />

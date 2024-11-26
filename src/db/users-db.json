@@ -1,0 +1,26 @@
+[
+  {
+    "id": "19732bd6-2d45-486e-9bca-3f2625daedf1",
+    "nome": "Wesleybl18",
+    "email": "wesleybl18@email.com",
+    "senha": "teste123"
+  },
+  {
+    "id": "49275476-54ca-42af-b63c-63f5fff741ca",
+    "nome": "teste",
+    "email": "teste@email",
+    "senha": "123"
+  },
+  {
+    "id": "76cc5c32-70a3-4a23-afba-c85eb0d60c95",
+    "nome": "teste13",
+    "email": "teste13@email.com",
+    "senha": "1234"
+  },
+  {
+    "id": "bc0452f3-0807-4013-8d8c-f7da9aef4b4e",
+    "nome": "Wesley Batista Luz",
+    "email": "weleybt@email.com",
+    "senha": "1234"
+  }
+]
