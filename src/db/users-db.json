@@ -3,5 +3,20 @@
     "id": "b3c3c04e-692b-4e52-9ce5-3a41cdd1de6d",
     "email": "wesleybl18@email.com",
     "password": "$2b$10$9OpWTOVkghYFyBA3vvmQYOhGpTaNodw/e2IA0MZOmUCP.9ZTALETe"
+  },
+  {
+    "id": "3e586874-5c00-4f7c-aad9-8d5289f7e26f",
+    "email": "wesley@teste.email",
+    "password": "$2b$10$uLbDDtaLL4DEnqv23x7rLOXoqb/jIaEYoRFtGNA3JxuwrHZ4C.Yti"
+  },
+  {
+    "id": "22c1a46b-7234-43df-bae8-65c79826b51d",
+    "email": "testeserver@email.com",
+    "password": "$2b$10$7LApPbRzD.XoUPsFPLeLzeGaPzByCsE4xWTRmhzjux/jjSEwI821q"
+  },
+  {
+    "id": "cb95e1fe-53b0-4f2e-8dfd-21bcf666232a",
+    "email": "email@email.com",
+    "password": "$2b$10$Sg7DLAu7QExcpWu54r6zpevO/iaRBgrC.uBlvbZkhY34pvjAN58rO"
   }
 ]
