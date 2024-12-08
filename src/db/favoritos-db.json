@@ -12,6 +12,7 @@
     "descricao": "bom filme"
   },
   {
+<<<<<<< HEAD
     "id": "11eacab2-cbe1-44d2-b54b-d1282a879f46",
     "nome": "Django Unchained",
     "img": "/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg",
@@ -36,5 +37,35 @@
     "img": "/XO7MrV0nsDlBWLjfM5ekiGgjyt.jpg",
     "descricao": "filme top",
     "email": "wesleybl18@email.com"
+=======
+    "id": "58ee075a-2c56-4a31-9414-74673365ce9d",
+    "nome": "Avengers: Infinity War",
+    "img": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+    "descricao": ""
+  },
+  {
+    "id": "8f17648d-b59c-4141-8102-ffdb6bf5aac9",
+    "nome": "Avengers: Infinity War",
+    "img": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+    "descricao": "BOM"
+  },
+  {
+    "id": "c10f3e9c-86b8-4339-aba8-c25879e24a6e",
+    "nome": "Avengers: Infinity War",
+    "img": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+    "descricao": "BOM"
+  },
+  {
+    "id": "ad6922b5-5c21-40fa-961b-b4e276a53690",
+    "nome": "Avengers Confidential: Black Widow & Punisher",
+    "img": "/wJcyYVRPZDOZOD2w0r2R6wuZqqN.jpg",
+    "descricao": ""
+  },
+  {
+    "id": "702eaa6e-4355-4ac0-91bc-2bc265f31f6f",
+    "nome": "Avengers: Infinity War",
+    "img": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+    "descricao": "hjggj"
+>>>>>>> 60b95043655d46352b7df3ba28df3497bb00ad92
   }
 ]
