@@ -18,5 +18,10 @@
     "id": "cb95e1fe-53b0-4f2e-8dfd-21bcf666232a",
     "email": "email@email.com",
     "password": "$2b$10$Sg7DLAu7QExcpWu54r6zpevO/iaRBgrC.uBlvbZkhY34pvjAN58rO"
+  },
+  {
+    "id": "4ff56c82-b44d-4d59-a0bf-21d2cd3d2165",
+    "email": "eleanderson99@gmail.com",
+    "password": "$2b$10$KBPJmYQDVgJXbCsGFmlUIuSUzcizTTs.BEuQkxnT31wb2MpP5D1rG"
   }
 ]

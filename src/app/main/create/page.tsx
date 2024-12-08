@@ -1,6 +1,7 @@
 
 'use client';
 
+import styles from './createFavorite.module.css'
 import { useState } from "react";
 import { addFavorito } from "@/utils/favorites-actions"; // create this new file
 
@@ -25,10 +26,10 @@ export default function CreateFavorite() {
     };
 
     return (
-        <div className="create-favorite-container">
+        <div className={styles.createFavoriteContainer}>
             <h2>Adicionar Filme aos Favoritos</h2>
 
-            <section className="buscar-filmes">
+            <section className={styles.buscarFilmes}>
                 <input
                     type="text"
                     placeholder="Digite o nome do filme"
@@ -38,9 +39,9 @@ export default function CreateFavorite() {
                 <button onClick={buscarFilmes}>Buscar</button>
             </section>
 
-            <section className="resultados-busca">
+            <section className={styles.resultadosBusca}>
                 {resultados.map((filme) => (
-                    <div key={filme.id} className="filme-card">
+                    <div key={filme.id} className={styles.filmeCard}>
                         <img
                             src={`https://image.tmdb.org/t/p/w500/${filme.poster_path}`}
                             alt={filme.title}
