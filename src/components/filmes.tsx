@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import path from "path";
 import { redirect } from "next/navigation";
+import { retornaBD, armazenaBD } from '@/utils/conexao-bd'
 
 import ConexaoBD
 
@@ -10,18 +11,18 @@ import ConexaoBD
 
 const dbPath = path.join(process.cwd(), 'src', 'db', 'filmes-db.json');
 
-export interface FilmesFrt { 
+export interface FilmesFrt {
     id: string,
     nome: string,
     img: string,
     descricao: string
 }
 
-const arquivo = "filmes-db.json";
+const arquivo = "favoritos-db.json";
 
 export default async function FilmeFav(props: FilmesFrt) {
 
-    const deleteFilme = async(formData: FormData)=>{
+    const deleteFilme = async (formData: FormData) => {
         'use server';
 
         //const file = await fs.readFile(`${dbPath}`,'utf8');
@@ -29,7 +30,7 @@ export default async function FilmeFav(props: FilmesFrt) {
 
         const id = props.id;
 
-        const acharIndex = (f) =>{
+        const acharIndex = (f) => {
             return f.id === id
         }
 
@@ -43,13 +44,13 @@ export default async function FilmeFav(props: FilmesFrt) {
         redirect('/main/listar');
 
     }
-    return(
+    return (
         <div className="filems-card">
             <h2>{props.nome}</h2>
             <Image src={props.img}
-            alt=""
-            width={200}
-            height={200}
+                alt=""
+                width={200}
+                height={200}
             />
             <p>{props.descricao}</p>
             <section className="etit-button">
@@ -61,5 +62,5 @@ export default async function FilmeFav(props: FilmesFrt) {
             </section>
         </div>
     )
-    
+
 }

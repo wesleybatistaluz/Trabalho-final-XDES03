@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from "react";
-import { addFavorito } from "@/utils/favorites-actions"; // create this new file
+import { addFavorito } from "@/utils/favorites-actions";// create this new file
 
 export default function CreateFavorite() {
     const [busca, setBusca] = useState<string>("");

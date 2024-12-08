@@ -10,5 +10,31 @@
     "nome": "The Last: Naruto the Movie",
     "img": "/bAQ8O5Uw6FedtlCbJTutenzPVKd.jpg",
     "descricao": "bom filme"
+  },
+  {
+    "id": "11eacab2-cbe1-44d2-b54b-d1282a879f46",
+    "nome": "Django Unchained",
+    "img": "/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg",
+    "descricao": "filme muito top, com ótima história"
+  },
+  {
+    "id": "888fca54-1bb4-44e5-945b-6a2d238a3b65",
+    "nome": "Ferdinand",
+    "img": "/rMm94JsRfcOPiPVsTRcBiiVBOhz.jpg",
+    "descricao": "filme muito bom pra crianca"
+  },
+  {
+    "id": "ee06b702-accd-4b47-92b2-88eab3ed2623",
+    "nome": "Boruto: Naruto the Movie",
+    "img": "/1k6iwC4KaPvTBt1JuaqXy3noZRY.jpg",
+    "descricao": "filme legal",
+    "email": "wesleybl18@email.com"
+  },
+  {
+    "id": "05a570a1-e479-4dfa-96a7-fc5b9e1fd794",
+    "nome": "Django",
+    "img": "/XO7MrV0nsDlBWLjfM5ekiGgjyt.jpg",
+    "descricao": "filme top",
+    "email": "wesleybl18@email.com"
   }
 ]

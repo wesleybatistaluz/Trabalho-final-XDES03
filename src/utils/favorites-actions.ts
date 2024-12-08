@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import crypto from "crypto";
 import { promises as fs } from "fs";
 import path from "path";
+import { getUserEmail } from "./auth"; // Importe a nova função
 
 const arquivo = "favoritos-db.json";
 
@@ -28,13 +29,21 @@ export async function armazenaBD(dados: any[]) {
 }
 
 export async function addFavorito(filme: any, comentario: string) {
+    // Obtenha o email do usuário logado
+    const userEmail = await getUserEmail();
+  
+    if (!userEmail) {
+        return { error: "Usuário não autenticado" };
+    }
+
     const novoFavorito = {
         id: crypto.randomUUID(),
         nome: filme.title,
         img: filme.poster_path,
         descricao: comentario,
+        email: userEmail, // Adicione o email do usuário
     };
-
+  
     try {
         const favoritosDB = await retornaBD();
         favoritosDB.push(novoFavorito);
