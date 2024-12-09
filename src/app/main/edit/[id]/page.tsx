@@ -37,7 +37,6 @@ export default async function EditFilme(props: EditFilmeProps) {
         const index = data.findIndex(f => f.id === id && f.email === userEmail);
 
         if (index !== -1) {
-            // Only update the description, keep other fields unchanged
             data[index] = {
                 ...data[index],
                 descricao: formData.get("descricao") as string
