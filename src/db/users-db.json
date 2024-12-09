@@ -33,5 +33,10 @@
     "id": "d4b0714e-8566-4fab-a7db-a0cc07b47f96",
     "email": "testetoken@email.com",
     "password": "$2b$10$NvOzN9PCQkM7d.UWA1ivY.ta.J8iVGNvjiaC8QJM2.jSjiO9JDdzy"
+  },
+  {
+    "id": "8576fa94-73b8-4c5f-b755-19c9ee9d36b8",
+    "email": "maria@email.com",
+    "password": "$2b$10$zTIvMWDhxukCQF.w0Rof0OT/iQKDhNyyXbig9yIRg5dr00Ekaj8Ye"
   }
 ]
