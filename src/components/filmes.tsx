@@ -17,18 +17,18 @@ const arquivo = "favoritos-db.json";
 export default async function FilmeFav(props: FilmesFrt) {
     const userEmail = await getUserEmail();
 
-    const deleteFilme = async (formData: FormData) => {
+    // Removemos o parâmetro formData não utilizado
+    const deleteFilme = async () => {
         'use server';
         
-        const filmesDB = await retornaBD(arquivo);
-        
-        // Filter out the film, ensuring it belongs to the logged-in user
+        const filmesDB = await retornaBD<FilmesFrt>(arquivo);
+
+        // Filtro mais explícito
         const updatedFilmesDB = filmesDB.filter((f) => 
-            f.id !== props.id || f.email !== userEmail
+            !(f.id === props.id && f.email === userEmail)
         );
-        
+
         await armazenaBD(arquivo, updatedFilmesDB);
-        
         redirect('/main/listar');
     }
 
@@ -40,12 +40,16 @@ export default async function FilmeFav(props: FilmesFrt) {
                 alt={props.nome}
                 width={200}
                 height={200}
+                // Adicione propriedades para otimização
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <p>{props.descricao}</p>
             <section className="edit-button">
                 <Link href={`/main/edit/${props.id}`} className="edit-comment">
                     Editar
                 </Link>
+                {/* Remova o parâmetro desnecessário */}
                 <form action={deleteFilme}>
                     <button type="submit">Remover</button>
                 </form>
