@@ -37,11 +37,11 @@ export async function addFavorito(filme: any, comentario: string) {
     }
 
     const novoFavorito = {
-        id: crypto.randomUUID(),
+        id: filme.id.toString(),
         nome: filme.title,
-        img: filme.poster_path,
+        img: `https://image.tmdb.org/t/p/w500/${filme.poster_path}`,
         descricao: comentario,
-        email: userEmail, // Adicione o email do usuário
+        email: userEmail,
     };
   
     try {

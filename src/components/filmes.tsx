@@ -12,11 +12,12 @@ import ConexaoBD
 const dbPath = path.join(process.cwd(), 'src', 'db', 'filmes-db.json');
 
 export interface FilmesFrt {
-    id: string,
-    nome: string,
-    img: string,
-    descricao: string
-}
+    id: string;
+    nome: string;
+    img: string;
+    descricao: string;
+    email: string;
+  }
 
 const arquivo = "favoritos-db.json";
 
@@ -47,8 +48,9 @@ export default async function FilmeFav(props: FilmesFrt) {
     return (
         <div className="filems-card">
             <h2>{props.nome}</h2>
-            <Image src={props.img}
-                alt=""
+            <Image 
+                src={props.img} // Agora já é o caminho completo
+                alt={props.nome}
                 width={200}
                 height={200}
             />

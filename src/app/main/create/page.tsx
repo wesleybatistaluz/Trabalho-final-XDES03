@@ -4,6 +4,7 @@
 import styles from './createFavorite.module.css'
 import { useState } from "react";
 import { addFavorito } from "@/utils/favorites-actions";// create this new file
+import Link from 'next/link';
 
 export default function CreateFavorite() {
     const [busca, setBusca] = useState<string>("");
@@ -26,8 +27,10 @@ export default function CreateFavorite() {
     };
 
     return (
+    
         <div className={styles.createFavoriteContainer}>
             <h2>Adicionar Filme aos Favoritos</h2>
+            <Link id="link-listar" href="/main/listar">Listar</Link>
 
             <section className={styles.buscarFilmes}>
                 <input
@@ -66,6 +69,9 @@ export default function CreateFavorite() {
                         </form>
                     </div>
                 ))}
+            </section>
+            <section className='listar-flimes'>
+
             </section>
         </div>
     );
