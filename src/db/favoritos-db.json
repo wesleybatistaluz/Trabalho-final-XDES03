@@ -1,19 +1,5 @@
 [
   {
-    "id": "398978",
-    "nome": "The Irishman",
-    "img": "https://image.tmdb.org/t/p/w500//mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg",
-    "descricao": "um dos melhores filmes de máfia, ótimo pra quem gosta de o poderoso chefao",
-    "email": "wesleybl18@email.com"
-  },
-  {
-    "id": "13",
-    "nome": "Forrest Gump",
-    "img": "https://image.tmdb.org/t/p/w500//arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
-    "descricao": "ótimo filme, história simplesmente sensacional",
-    "email": "wesleybl18@email.com"
-  },
-  {
     "id": "302401",
     "nome": "Snowden",
     "img": "https://image.tmdb.org/t/p/w500//yfK7zxNL63VWfluFuoUaJj5PdNw.jpg",
