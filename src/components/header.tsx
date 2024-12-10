@@ -14,7 +14,7 @@ export default function Header(){
             
             <nav className='nav'>
             <ul className='ul-left-side'>
-                <Link className="link" href="/user/create">Criar</Link>
+                <Link className="link" href="/user/create">Criar Conta</Link>
                 <Link className="link" href="/user/login">Login</Link>
             </ul>
             </nav>

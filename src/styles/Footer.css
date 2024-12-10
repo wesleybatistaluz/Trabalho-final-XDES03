@@ -1,20 +1,33 @@
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    background-color: #2c3e50; /* Cor de fundo suave */
+    color: #ecf0f1; /* Cor do texto clara */
+    padding: 1rem 0; /* Menor espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    font-size: 0.9rem; /* Fonte um pouco menor */
     width: 100%;
-    background: linear-gradient(to right, black, #0b3d91);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    z-index: 10; /* Para garantir que ele fique acima de outros elementos */
-}
-
-footer p {
-    color: red;
 }
 
 footer a {
-    color: blue;
+    color: #74b9ff; /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Deixa o link em negrito */
+    transition: color 0.3s ease; /* Suaviza a mudança de cor */
+}
+
+footer a:hover {
+    color: #55a8e1; /* Cor do link no hover */
+    text-decoration: underline; /* Sublinha o link ao passar o mouse */
+}
+
+footer p {
+    margin: 0; /* Remove a margem do parágrafo */
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 0.75rem 1rem; /* Reduz o padding em telas menores */
+    }
+    footer p {
+        font-size: 0.85rem; /* Diminui ainda mais o tamanho da fonte em telas pequenas */
+    }
 }

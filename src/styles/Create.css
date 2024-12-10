@@ -1,0 +1,86 @@
+/* Estilização principal para o formulário de criação */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff; /* Fundo branco */
+    border: none;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px; /* Largura levemente maior */
+    margin: 20px auto;
+}
+
+/* Logo */
+.form-image {
+    width: 70px;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+.user-input input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-input input:focus {
+    border-color: #74b9ff;
+    box-shadow: 0 0 8px rgba(116, 185, 255, 0.5);
+    outline: none;
+}
+
+/* Botão Cadastrar */
+.login-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #77d9a8, #92bce3);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-form button:hover {
+    background: linear-gradient(135deg, #57d1b5, #91a6d5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.login-form button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Seções de input */
+.user-input {
+    margin-bottom: 1rem;
+}
+
+/* Estilização de placeholders */
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Ajuste para erros de validação ou alertas */
+.toast-error {
+    color: #ff6b6b; /* Vermelho */
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}

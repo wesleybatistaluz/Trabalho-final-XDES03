@@ -1,9 +1,8 @@
-// src/app/main/fav/page.tsx
 import { retornaBD } from '@/utils/conexao-bd';  // Função para acessar o banco de dados
 import { getUserEmail } from "@/utils/auth";  // Função para obter o email do usuário logado
 import FilmeFav, { FilmesFrt } from '@/components/filmes';  // Componente que exibe o filme favorito
 import Link from "next/link";
-
+import '@/app/main/fav/fav.css';  // Importação do arquivo CSS
 
 const arquivo = "favoritos-db.json";  // Arquivo que armazena os filmes favoritos
 
@@ -22,7 +21,7 @@ export default async function PaginaFavoritos() {
         <div className="pagina-favoritos">
             
             <Link href="/main/create" className="add-filme">
-            Adicionar Filmes aos Favoritos
+                Adicionar Filmes aos Favoritos
             </Link>
 
             <h1>Meus Filmes Favoritos</h1>
