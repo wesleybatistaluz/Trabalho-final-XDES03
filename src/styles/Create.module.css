@@ -1,0 +1,127 @@
+.createFavoriteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh; /* Garante que o conteúdo ocupe a altura total */
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Gradiente suave */
+    color: #333; /* Cor de texto padrão */
+}
+
+/* Melhorando o formulário */
+.buscarFilmes {
+    display: flex;
+    flex-wrap: wrap; /* Ajusta inputs e botões em telas menores */
+    gap: 1rem; /* Espaçamento entre elementos */
+    justify-content: center;
+    margin-bottom: 2rem; /* Espaço abaixo do formulário */
+}
+
+.buscarFilmes input {
+    width: 100%;
+    max-width: 300px; /* Limite para telas grandes */
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.buscarFilmes input:focus {
+    border-color: #0070f3;
+    box-shadow: 0 0 8px rgba(0, 112, 243, 0.5);
+}
+
+.buscarFilmes button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.buscarFilmes button:hover {
+    background: linear-gradient(135deg, #57d1b5, #91a6d5);
+    transform: translateY(-2px);
+}
+
+/* Ajustando os resultados */
+.resultadosBusca {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivo */
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filmeCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filmeCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.placeholderImage {
+    width: 150px;
+    height: 200px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #666;
+    border-radius: 8px;
+}
+
+/* Input de comentário */
+.filmeCard input[type="text"] {
+    width: 100%;
+    max-width: 250px;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.filmeCard input[type="text"]:focus {
+    border-color: #0070f3;
+}
+
+/* Botão de adicionar */
+.filmeCard button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filmeCard button:hover {
+    background: linear-gradient(135deg, #57d1b5, #91a6d5);
+    transform: translateY(-2px);
+}

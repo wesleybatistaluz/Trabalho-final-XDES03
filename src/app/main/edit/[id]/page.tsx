@@ -3,6 +3,7 @@ import path from 'path';
 import { notFound, redirect } from 'next/navigation';
 import Image from 'next/image';
 import { getUserEmail } from '@/utils/auth';
+import styles from '@/styles/edit.module.css'; // CSS Module importado corretamente
 
 const dbPath = path.join(process.cwd(), 'src', 'db', 'favoritos-db.json');
 
@@ -12,6 +13,11 @@ interface FilmeProps {
     img: string;
     descricao: string;
     email: string;
+}
+
+// Adiciona os tipos para parâmetros e define compatibilidade com Next.js
+export async function generateStaticParams() {
+    return []; // Pode ser ajustado conforme o uso real
 }
 
 export default async function EditFilme({ params }: { params: { id: string } }) {
@@ -51,7 +57,7 @@ export default async function EditFilme({ params }: { params: { id: string } }) 
     };
 
     return (
-        <div className="edit-filme-container">
+        <div className={styles.editFilmeContainer}>
             <h2>Editar Descrição do Filme: {filme.nome}</h2>
 
             <Image
@@ -62,8 +68,8 @@ export default async function EditFilme({ params }: { params: { id: string } }) 
                 style={{ margin: '0 auto' }}
             />
 
-            <form action={updateFilme} className="edit-filme-form">
-                <section className="filme-input">
+            <form action={updateFilme} className={styles.editFilmeForm}>
+                <section className={styles.filmeInput}>
                     <textarea
                         id="descricao"
                         name="descricao"
@@ -73,7 +79,7 @@ export default async function EditFilme({ params }: { params: { id: string } }) 
                     />
                 </section>
 
-                <button type="submit">Atualizar Descrição</button>
+                <button type="submit" className={styles.submitButton}>Atualizar Descrição</button>
             </form>
         </div>
     );

@@ -13,29 +13,5 @@
     "descricao": "filme muito top, racista morre , e django vive feliz no final",
     "email": "wesleybl18@email.com",
     "createdAt": "2024-12-09T19:36:58.351Z"
-  },
-  {
-    "id": "1078606",
-    "nome": "Gente",
-    "img": "https://image.tmdb.org/t/p/w500//3stnB39w8w8pi12BAkMCNK1IP7t.jpg",
-    "descricao": "",
-    "email": "d2022008340@unifei.edu.br",
-    "createdAt": "2024-12-10T04:13:03.799Z"
-  },
-  {
-    "id": "109418",
-    "nome": "Grown Ups 2",
-    "img": "https://image.tmdb.org/t/p/w500//hT6ijOtjtYrnyDhN7VA2QWyGFAm.jpg",
-    "descricao": "",
-    "email": "d2022008340@unifei.edu.br",
-    "createdAt": "2024-12-10T04:21:11.058Z"
-  },
-  {
-    "id": "1318901",
-    "nome": "Morte",
-    "img": "https://image.tmdb.org/t/p/w500//3AEVbVORD5plj8cdsrkUtVeA9CC.jpg",
-    "descricao": "",
-    "email": "d2022008340@unifei.edu.br",
-    "createdAt": "2024-12-10T04:25:27.923Z"
   }
 ]
