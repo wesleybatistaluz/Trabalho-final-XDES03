@@ -29,7 +29,7 @@ export default async function FilmeFav(props: FilmesFrt) {
         );
 
         await armazenaBD(arquivo, updatedFilmesDB);
-        redirect('/main/listar');
+        redirect('/main/fav');  // Alteração aqui para redirecionar para o novo caminho
     }
 
     return (
