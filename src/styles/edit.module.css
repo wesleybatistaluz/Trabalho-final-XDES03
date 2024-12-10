@@ -1,0 +1,73 @@
+.editFilmeContainer {
+    max-width: 90%; /* Reduz a largura máxima para caber em telas menores */
+    margin: 10px auto; /* Menos espaço em dispositivos pequenos */
+    padding: 20px; /* Ajuste o padding para evitar overflow */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow: hidden; /* Garante que o conteúdo não exceda o contêiner */
+}
+
+.editFilmeForm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Reduz o espaço entre os elementos em telas pequenas */
+    align-items: center;
+    width: 100%;
+}
+
+/* Campo de texto */
+.filmeInput textarea {
+    width: 100%; /* Garante que o textarea ocupe a largura do contêiner */
+    max-width: 100%; /* Evita exceder a largura máxima */
+    min-height: 30px; /* Reduz a altura mínima para telas menores */
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 0.9rem; /* Ajuste do tamanho da fonte */
+    line-height: 1.4;
+    color: #333333;
+    background-color: #f9f9f9;
+    resize: vertical;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.filmeInput textarea:focus {
+    border-color: #0070f3;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
+}
+
+/* Botão */
+.submitButton {
+    width: 100%; /* O botão ocupa toda a largura disponível no contêiner */
+    max-width: 300px; /* Limita o tamanho máximo */
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submitButton:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.submitButton:active {
+    background-color: #003e7e;
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
