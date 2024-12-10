@@ -1,5 +1,5 @@
 'use client';
-import styles from './createFavorite.module.css';
+import styles from '@/styles/Create.module.css';
 import { useState, FormEvent } from "react";
 import { addFavorito } from "@/utils/favorites-actions";
 import Link from 'next/link';
