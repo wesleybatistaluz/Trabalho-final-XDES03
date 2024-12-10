@@ -31,7 +31,7 @@ export async function createUser(data: LoginCredentials) {
     const usuarioExistente = usuariosBD.find(user => user.email === email);
 
     if (usuarioExistente) {
-        return {error: 'Usuário ou senha incorretos'};
+        return {error: 'Já existe um cadastro com esse e-mail'};
     }
 
     // Adiciona novo usuário

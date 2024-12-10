@@ -1,73 +1,117 @@
 .editFilmeContainer {
-    max-width: 90%; /* Reduz a largura máxima para caber em telas menores */
-    margin: 10px auto; /* Menos espaço em dispositivos pequenos */
-    padding: 20px; /* Ajuste o padding para evitar overflow */
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
     background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     font-family: 'Arial', sans-serif;
     text-align: center;
-    overflow: hidden; /* Garante que o conteúdo não exceda o contêiner */
+    animation: fadeIn 0.5s ease-in-out;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333333;
+}
+
+/* Imagem do Filme */
+img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Formulário */
 .editFilmeForm {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Reduz o espaço entre os elementos em telas pequenas */
+    gap: 10px;
     align-items: center;
     width: 100%;
 }
 
 /* Campo de texto */
 .filmeInput textarea {
-    width: 100%; /* Garante que o textarea ocupe a largura do contêiner */
-    max-width: 100%; /* Evita exceder a largura máxima */
-    min-height: 30px; /* Reduz a altura mínima para telas menores */
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f8f8f8;
     border: 1px solid #cccccc;
     border-radius: 8px;
-    padding: 5px;
-    font-size: 0.9rem; /* Ajuste do tamanho da fonte */
-    line-height: 1.4;
-    color: #333333;
-    background-color: #f9f9f9;
-    resize: vertical;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    resize: vertical;
     outline: none;
-    transition: border-color 0.3s, background-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .filmeInput textarea:focus {
     border-color: #0070f3;
+    box-shadow: 0 0 8px rgba(0, 112, 243, 0.3);
     background-color: #ffffff;
-    box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
 }
 
 /* Botão */
 .submitButton {
-    width: 100%; /* O botão ocupa toda a largura disponível no contêiner */
-    max-width: 300px; /* Limita o tamanho máximo */
-    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    padding: 12px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
-    color: white;
+    color: #ffffff;
     background-color: #0070f3;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .submitButton:hover {
     background-color: #005bb5;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .submitButton:active {
     background-color: #003e7e;
     transform: translateY(0);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+    .editFilmeContainer {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .filmeInput textarea {
+        min-height: 80px;
+        font-size: 0.9rem;
+    }
+
+    .submitButton {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

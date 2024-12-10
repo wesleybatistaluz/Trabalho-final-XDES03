@@ -1,4 +1,3 @@
-import '@/styles/listar.css';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { notFound, redirect } from 'next/navigation';
@@ -16,23 +15,30 @@ interface FilmeProps {
     email: string;
 }
 
+// Adiciona os tipos para parâmetros e define compatibilidade com Next.js
 export async function generateStaticParams() {
     return []; // Pode ser ajustado conforme o uso real
 }
 
 export default async function EditFilme({ params }: { params: { id: string } }) {
+    // Aguarda o email do usuário de forma assíncrona
     const userEmail = await getUserEmail();
 
+    // Lê os dados do banco de dados (arquivo JSON)
     const file = await fs.readFile(dbPath, 'utf8');
     const data: FilmeProps[] = JSON.parse(file);
 
-    const id = params.id;
+    // Acessa o parâmetro `params.id` de forma assíncrona
+    const { id } = await params;  // Usar 'await' para acessar os parâmetros
+
+    // Encontra o filme pelo ID e pelo email do usuário
     const filme = data.find((f) => f.id === id && f.email === userEmail);
 
     if (!filme) {
         return notFound();
     }
 
+    // Função para atualizar o filme
     const updateFilme = async (formData: FormData) => {
         'use server';
 
@@ -44,8 +50,9 @@ export default async function EditFilme({ params }: { params: { id: string } }) 
                 descricao: formData.get('descricao') as string,
             };
 
+            // Atualiza o arquivo JSON com as novas informações
             await fs.writeFile(dbPath, JSON.stringify(data, null, 2));
-            redirect('/main/listar');
+            redirect('/main/fav');
         }
     };
 

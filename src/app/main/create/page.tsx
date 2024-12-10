@@ -4,6 +4,7 @@ import { useState, FormEvent } from "react";
 import { addFavorito } from "@/utils/favorites-actions";
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface Filme {
   id: number;
@@ -16,47 +17,30 @@ export default function CreateFavorite() {
   const [resultados, setResultados] = useState<Filme[]>([]);
   const [erro, setErro] = useState<string | null>(null);
   const [comentario, setComentario] = useState<{ [key: number]: string }>({});
+  const router = useRouter();
 
   const buscarFilmes = async () => {
     if (!busca.trim()) return;
 
-    // Limpa erros anteriores
     setErro(null);
 
     try {
-      // Use variável de ambiente para a chave da API
       const apiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-      
-      if (!apiKey) {
-        throw new Error('Chave de API não configurada');
-      }
+      if (!apiKey) throw new Error('Chave de API não configurada');
 
       const res = await fetch(
         `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(busca)}&api_key=${apiKey}`
       );
-      
+
       if (!res.ok) {
-        // Tenta obter detalhes do erro do corpo da resposta
-        const errorBody = await res.text();
-        throw new Error(`Erro na busca: ${res.status} - ${errorBody}`);
+        throw new Error(`Erro na busca: ${res.status}`);
       }
-      
+
       const data = await res.json();
       setResultados(data.results || []);
     } catch (error) {
-      // Converte o erro para uma string amigável
-      const errorMessage = error instanceof Error 
-        ? error.message 
-        : 'Erro desconhecido ao buscar filmes';
-      
-      // Define o estado de erro
-      setErro(errorMessage);
-      
-      // Limpa resultados anteriores
+      setErro(error instanceof Error ? error.message : 'Erro desconhecido ao buscar filmes');
       setResultados([]);
-      
-      // Log no console para debug
-      console.error("Erro detalhado:", error);
     }
   };
 
@@ -65,10 +49,19 @@ export default function CreateFavorite() {
     buscarFilmes();
   };
 
+  const handleAddFavorite = async (filme: Filme) => {
+    try {
+      await addFavorito(filme, comentario[filme.id] || "");
+      router.push('/main/fav');
+    } catch {
+      setErro('Erro ao adicionar o filme aos favoritos.');
+    }
+  };
+
   return (
     <div className={styles.createFavoriteContainer}>
       <h2>Adicionar Filme aos Favoritos</h2>
-      <Link id="link-listar" href="/main/listar">Listar</Link>
+      <Link id="link-listar" href="/main/fav">Ir para Favoritos</Link>
 
       <form onSubmit={handleSubmit} className={styles.buscarFilmes}>
         <input
@@ -80,17 +73,10 @@ export default function CreateFavorite() {
         <button type="submit">Buscar</button>
       </form>
 
-      {/* Exibe mensagem de erro */}
-      {erro && (
-        <div className={styles.errorMessage}>
-          <p>{erro}</p>
-        </div>
-      )}
+      {erro && <div className={styles.errorMessage}><p>{erro}</p></div>}
 
       <section className={styles.resultadosBusca}>
-        {resultados.length === 0 && busca.trim() && !erro && (
-          <p>Nenhum filme encontrado.</p>
-        )}
+        {resultados.length === 0 && busca.trim() && !erro && <p>Nenhum filme encontrado.</p>}
         {resultados.map((filme) => (
           <div key={filme.id} className={styles.filmeCard}>
             {filme.poster_path ? (
@@ -99,12 +85,8 @@ export default function CreateFavorite() {
                 alt={filme.title}
                 width={150}
                 height={200}
-                priority={false}
-                sizes="(max-width: 768px) 100px, 150px"
               />
-            ) : (
-              <div className={styles.placeholderImage}>Sem Imagem</div>
-            )}
+            ) : <div className={styles.placeholderImage}>Sem Imagem</div>}
             <h3>{filme.title}</h3>
             <input
               type="text"
@@ -114,12 +96,13 @@ export default function CreateFavorite() {
                 setComentario({ ...comentario, [filme.id]: e.target.value })
               }
             />
-            <form action={async () => {
-              await addFavorito(filme, comentario[filme.id] || "");
-            }}>
-              <button type="submit">
-                Adicionar aos Favoritos
-              </button>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleAddFavorite(filme);
+              }}
+            >
+              <button type="submit">Adicionar aos Favoritos</button>
             </form>
           </div>
         ))}

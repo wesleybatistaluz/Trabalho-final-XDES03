@@ -1,0 +1,106 @@
+/* Estilização para a página de favoritos */
+.pagina-favoritos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 50px);
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); 
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Link para adicionar filmes */
+.add-filme {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.add-filme:hover {
+    background: linear-gradient(135deg, #57d1b5, #91a6d5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.add-filme:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Título da página */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Estilização para quando não houver filmes favoritos */
+.pagina-favoritos p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Container para os filmes favoritos */
+.list-filmes-favoritos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Card do filme */
+.filme-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 200px; 
+    text-align: center;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.filme-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.filme-card img {
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filme-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.filme-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .list-filmes-favoritos {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filme-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
