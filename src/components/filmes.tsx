@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { retornaBD, armazenaBD } from '@/utils/conexao-bd';
 import { getUserEmail } from "@/utils/auth";
+import styles from '@/styles/filmes.module.css';
 
 export interface FilmesFrt {
     id: string;
@@ -17,7 +18,7 @@ const arquivo = "favoritos-db.json";
 export default async function FilmeFav(props: FilmesFrt) {
     const userEmail = await getUserEmail();
 
-    // Removemos o parâmetro formData não utilizado
+    // Função para remover filme
     const deleteFilme = async () => {
         'use server';
         
@@ -29,7 +30,7 @@ export default async function FilmeFav(props: FilmesFrt) {
         );
 
         await armazenaBD(arquivo, updatedFilmesDB);
-        redirect('/main/fav');  // Alteração aqui para redirecionar para o novo caminho
+        redirect('/main/fav');  // Redireciona para a página de favoritos
     }
 
     return (
@@ -40,18 +41,16 @@ export default async function FilmeFav(props: FilmesFrt) {
                 alt={props.nome}
                 width={200}
                 height={200}
-                // Adicione propriedades para otimização
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <p>{props.descricao}</p>
             <section className="edit-button">
-                <Link href={`/main/edit/${props.id}`} className="edit-comment">
+                <Link href={`/main/edit/${props.id}`} className={styles.editButton}>
                     Editar
                 </Link>
-                {/* Remova o parâmetro desnecessário */}
                 <form action={deleteFilme}>
-                    <button type="submit">Remover</button>
+                    <button type="submit" className={styles.submitButton}>Remover</button>
                 </form>
             </section>
         </div>

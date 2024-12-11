@@ -1,0 +1,39 @@
+/* Estilos para o botão de editar */
+.editButton {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: #005bb5;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editButton:hover {
+    background-color: #003e7e;
+}
+
+.editButton:active {
+    background-color: #002c5f;
+}
+
+.submitButton {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #005bb5;
+}
+
+.submitButton:active {
+    background-color: #003e7e;
+}
