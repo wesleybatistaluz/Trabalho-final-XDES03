@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <header>
             <section className='section'>
-                <Image className='img-logo' src={logoapi} alt='Logo do pokémon' />
+                <Image className='img-logo' src={logoapi} alt='Logo da API' />
             </section>
 
             <nav className='nav'>

@@ -21,5 +21,29 @@
     "descricao": "Sei lá que filme é esse",
     "email": "joao@gmail.com",
     "createdAt": "2024-12-10T19:35:05.898Z"
+  },
+  {
+    "id": "4951",
+    "nome": "10 Things I Hate About You",
+    "img": "https://image.tmdb.org/t/p/w500//ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
+    "descricao": "Eu amo esse filme",
+    "email": "leticiagatinha123@gmail.com",
+    "createdAt": "2024-12-11T00:34:27.775Z"
+  },
+  {
+    "id": "1160164",
+    "nome": "TAYLOR SWIFT | THE ERAS TOUR",
+    "img": "https://image.tmdb.org/t/p/w500//jf3YO8hOqGHCupsREf5qymYq1n.jpg",
+    "descricao": "MULHER DA MINHA VIDA, AMO ESSA BRANQUELA",
+    "email": "leticiagatinha123@gmail.com",
+    "createdAt": "2024-12-11T00:39:59.323Z"
+  },
+  {
+    "id": "8920",
+    "nome": "Garfield",
+    "img": "https://image.tmdb.org/t/p/w500//vqwTSWNLyH55g8kBT61s2DgNYEp.jpg",
+    "descricao": "gato gordo",
+    "email": "leticiagatinha123@gmail.com",
+    "createdAt": "2024-12-11T01:13:24.837Z"
   }
 ]
