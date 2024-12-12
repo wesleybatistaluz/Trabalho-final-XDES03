@@ -21,8 +21,8 @@
 
 ## Tecnologias Utilizadas 💻
 
-- **Frontend**: React, HTML5, CSS3.  
-- **Backend**: Node.js  
+- **Frontend**: Next.js, HTML5, CSS3, Axios: Biblioteca para realizar requisições HTTP assíncronas 
+- **Backend**: Utilizando arquivos .json para persistência de dados
 - **Outros**: Git e integração com APIs.  
 
 ---
@@ -32,8 +32,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ### Pré-requisitos
-
-- Node.js instalado em sua máquina.  
+  
 - Gerenciador de pacotes (npm, yarn, pnpm ou bun).  
 
 ### Instalação
@@ -84,3 +83,75 @@ A maneira mais fácil de implantar sua aplicação Next.js é usar a [plataforma
 Confira nossa [documentação de implantação do Next.js](https://nextjs.org/docs/app/building-your-application/deploying) para mais detalhes.
 
 ---
+
+## Estrutura e Pastas do Front-end 🚧
+
+A estrutura do projeto está organizada da seguinte maneira para o front-end:
+
+root/
+├── src/
+│   ├── app/
+│   │   ├── fonts/
+│   │   │   ├── GeistMonoVF/
+│   │   │   └── GeistVF/
+│   │   │
+│   │   ├── main/
+│   │   │   ├── create/
+│   │   │   │   ├── createFavorite.module.css
+│   │   │   │   └── page.tsx
+│   │   │   │
+│   │   │   ├── edit/[id]/
+│   │   │   │   └── page.tsx
+│   │   │   │
+│   │   │   ├── fav/
+│   │   │   │   ├── fav.css
+│   │   │   │   └── page.tsx
+│   │   │   │
+│   │   │   ├── listar/
+│   │   │   │   ├── listar.css
+│   │   │   │   └── page.tsx
+│   │   │   │
+│   │   ├── user/
+│   │   │       ├── create/
+│   │   │       │   └── page.tsx
+│   │   │       │
+│   │   │       ├── login/
+│   │   │           └── page.tsx
+│   │   │
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.css
+│   │   └── page.tsx
+│   │
+│   ├── components/
+│   │   ├── filmes.tsx
+│   │   ├── footer.tsx
+│   │   ├── form-create.tsx
+│   │   ├── form-login.tsx
+│   │   └── header.tsx
+│   │
+│   ├── styles/
+│   │   ├── create.css
+│   │   ├── Create.modules.css
+│   │   ├── edit.modules.css
+│   │   ├── filmes.modules.css
+│   │   ├── Footer.css
+│   │   ├── Header.css
+│   │   ├── listar.css
+│   │   └── Login.css
+│   │
+│   ├── utils/
+│   │   ├── auth.ts
+│   │   ├── conexao-bd.ts
+│   │   ├── credentials.ts
+│   │   └── favorites-actions.ts
+│   │
+├── .env
+├── .eslintrc.json
+├── .gitignore
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── README.md
+└── ... (outros arquivos de configuração e metadados)
