@@ -88,70 +88,59 @@ Confira nossa [documentação de implantação do Next.js](https://nextjs.org/do
 
 A estrutura do projeto está organizada da seguinte maneira para o front-end:
 
-root/
-├── src/
-│   ├── app/
-│   │   ├── fonts/
-│   │   │   ├── GeistMonoVF/
-│   │   │   └── GeistVF/
-│   │   │
-│   │   ├── main/
-│   │   │   ├── create/
-│   │   │   │   ├── createFavorite.module.css
-│   │   │   │   └── page.tsx
-│   │   │   │
-│   │   │   ├── edit/[id]/
-│   │   │   │   └── page.tsx
-│   │   │   │
-│   │   │   ├── fav/
-│   │   │   │   ├── fav.css
-│   │   │   │   └── page.tsx
-│   │   │   │
-│   │   │   ├── listar/
-│   │   │   │   ├── listar.css
-│   │   │   │   └── page.tsx
-│   │   │   │
-│   │   ├── user/
-│   │   │       ├── create/
-│   │   │       │   └── page.tsx
-│   │   │       │
-│   │   │       ├── login/
-│   │   │           └── page.tsx
-│   │   │
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   ├── page.css
-│   │   └── page.tsx
-│   │
-│   ├── components/
-│   │   ├── filmes.tsx
-│   │   ├── footer.tsx
-│   │   ├── form-create.tsx
-│   │   ├── form-login.tsx
-│   │   └── header.tsx
-│   │
-│   ├── styles/
-│   │   ├── create.css
-│   │   ├── Create.modules.css
-│   │   ├── edit.modules.css
-│   │   ├── filmes.modules.css
-│   │   ├── Footer.css
-│   │   ├── Header.css
-│   │   ├── listar.css
-│   │   └── Login.css
-│   │
-│   ├── utils/
-│   │   ├── auth.ts
-│   │   ├── conexao-bd.ts
-│   │   ├── credentials.ts
-│   │   └── favorites-actions.ts
-│   │
-├── .env
-├── .eslintrc.json
-├── .gitignore
-├── next-env.d.ts
-├── next.config.ts
-├── package-lock.json
-├── package.json
-├── README.md
+root/  
+├── src/  
+│   ├── app/  
+│   │   ├── fonts/  
+│   │   │   ├── GeistMonoVF/  
+│   │   │   └── GeistVF/  
+│   │   ├── main/  
+│   │   │   ├── create/  
+│   │   │   │   ├── createFavorite.module.css  
+│   │   │   │   └── page.tsx  
+│   │   │   ├── edit/[id]/  
+│   │   │   │   └── page.tsx  
+│   │   │   ├── fav/  
+│   │   │   │   ├── fav.css  
+│   │   │   │   └── page.tsx  
+│   │   │   ├── listar/  
+│   │   │   │   ├── listar.css  
+│   │   │   │   └── page.tsx  
+│   │   ├── user/  
+│   │   │   ├── create/  
+│   │   │   │   └── page.tsx  
+│   │   │   ├── login/  
+│   │   │   │   └── page.tsx  
+│   │   ├── globals.css  
+│   │   ├── layout.tsx  
+│   │   ├── page.css  
+│   │   └── page.tsx  
+│   ├── components/  
+│   │   ├── filmes.tsx  
+│   │   ├── footer.tsx  
+│   │   ├── form-create.tsx  
+│   │   ├── form-login.tsx  
+│   │   └── header.tsx  
+│   ├── styles/  
+│   │   ├── create.css  
+│   │   ├── Create.modules.css  
+│   │   ├── edit.modules.css  
+│   │   ├── filmes.modules.css  
+│   │   ├── Footer.css  
+│   │   ├── Header.css  
+│   │   ├── listar.css  
+│   │   └── Login.css  
+│   ├── utils/  
+│   │   ├── auth.ts  
+│   │   ├── conexao-bd.ts  
+│   │   ├── credentials.ts  
+│   │   └── favorites-actions.ts  
+├── .env  
+├── .eslintrc.json  
+├── .gitignore  
+├── next-env.d.ts  
+├── next.config.ts  
+├── package-lock.json  
+├── package.json  
+├── README.md  
 └── ... (outros arquivos de configuração e metadados)
