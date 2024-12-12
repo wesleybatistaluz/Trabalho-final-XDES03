@@ -45,5 +45,13 @@
     "descricao": "gato gordo",
     "email": "leticiagatinha123@gmail.com",
     "createdAt": "2024-12-11T01:13:24.837Z"
+  },
+  {
+    "id": "9737",
+    "nome": "Bad Boys",
+    "img": "https://image.tmdb.org/t/p/w500//x1ygBecKHfXX4M2kRhmFKWfWbJc.jpg",
+    "descricao": "",
+    "email": "d2022008340@unifei.edu.br",
+    "createdAt": "2024-12-11T05:54:16.089Z"
   }
 ]
