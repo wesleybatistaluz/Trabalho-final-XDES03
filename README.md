@@ -11,6 +11,20 @@
 
 ---
 
+## Problema Resolvido✅
+
+O TheMovieDB atende à demanda por uma plataforma unificada onde apaixonados por cinema possam encontrar e acompanhar os filmes mais populares e relevantes do momento. Em um contexto onde a vasta oferta de entretenimento pode ser desafiadora, a plataforma facilita a busca por produções de qualidade, proporcionando uma experiência intuitiva e personalizada aos usuários.
+
+---
+
+### Importância do Problema
+
+- **Acesso Simplificado:** Proporcionar uma plataforma digital prática e acessível, disponível a qualquer momento e em qualquer lugar.
+- **Valor Cultural:** Os filmes vão além do entretenimento; são uma porta para conhecer diferentes culturas, ideias e narrativas inspiradoras.
+- **Experiência Personalizada:** Oferecer recursos de personalização que permitem adaptar a experiência de visualização, aumentando o engajamento e a satisfação dos usuários.
+
+---
+
 ## Funcionalidades Principais 🛠️
 
 - **Design Atrativo e Funcional**: Interface construída com foco na paleta verde e azul, priorizando acessibilidade e beleza visual.  
