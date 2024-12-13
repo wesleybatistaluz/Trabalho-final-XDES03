@@ -58,6 +58,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
    # ou
    bun dev
    ```
+4. Aqui estão algumas dependências a serem instaladas:
+  ```bash
+  npm i
+  npm i zod
+  npm i react-hot-toast
+  npm i bcrypt
+  ```
 
 Abra [http://localhost:3000](http://localhost:3000) no navegador para ver o resultado.
 
@@ -84,7 +91,7 @@ Confira nossa [documentação de implantação do Next.js](https://nextjs.org/do
 
 ---
 
-## Estrutura e Pastas do Front-end 🚧
+## Estrutura e Pastas do Projeto 🚧
 
 A estrutura do projeto está organizada da seguinte maneira para o front-end:
 
